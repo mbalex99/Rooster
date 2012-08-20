@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooster.Domain", "Rooster.Domain\Rooster.Domain.csproj", "{9AAE65C5-C3A8-4198-8A21-46733F82F755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooster.Security", "Rooster.Security\Rooster.Security.csproj", "{82569C2E-8973-4807-9558-598C166B2D52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooster.DataAccess", "Rooster.DataAccess\Rooster.DataAccess.csproj", "{B5657937-AD75-41B2-8A4B-2E28863752D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooster.Website", "Rooster.Website\Rooster.Website.csproj", "{393E1FF5-E656-42D4-AD00-2DEE29307247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rooster.Service", "Rooster.Service\Rooster.Service.csproj", "{7DE6EAC1-2E98-40DC-8356-B606E9E1A85C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AAE65C5-C3A8-4198-8A21-46733F82F755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AAE65C5-C3A8-4198-8A21-46733F82F755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AAE65C5-C3A8-4198-8A21-46733F82F755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AAE65C5-C3A8-4198-8A21-46733F82F755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82569C2E-8973-4807-9558-598C166B2D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82569C2E-8973-4807-9558-598C166B2D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82569C2E-8973-4807-9558-598C166B2D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82569C2E-8973-4807-9558-598C166B2D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5657937-AD75-41B2-8A4B-2E28863752D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5657937-AD75-41B2-8A4B-2E28863752D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5657937-AD75-41B2-8A4B-2E28863752D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5657937-AD75-41B2-8A4B-2E28863752D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{393E1FF5-E656-42D4-AD00-2DEE29307247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{393E1FF5-E656-42D4-AD00-2DEE29307247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{393E1FF5-E656-42D4-AD00-2DEE29307247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{393E1FF5-E656-42D4-AD00-2DEE29307247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE6EAC1-2E98-40DC-8356-B606E9E1A85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE6EAC1-2E98-40DC-8356-B606E9E1A85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE6EAC1-2E98-40DC-8356-B606E9E1A85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE6EAC1-2E98-40DC-8356-B606E9E1A85C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = Rooster.ThirdParty\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
