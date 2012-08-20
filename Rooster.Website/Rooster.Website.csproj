@@ -83,12 +83,8 @@
     <Compile Include="Models\AccountViewModels\RegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\main.css" />
     <Content Include="Global.asax" />
-    <Content Include="Assets\js\jquery-1.5.1-vsdoc.js" />
-    <Content Include="Assets\js\jquery-1.5.1.js" />
-    <Content Include="Assets\js\jquery-1.5.1.min.js" />
-    <Content Include="Assets\js\jquery-ui-1.8.11.js" />
-    <Content Include="Assets\js\jquery-ui-1.8.11.min.js" />
     <Content Include="Assets\js\jquery.validate-vsdoc.js" />
     <Content Include="Assets\js\jquery.validate.js" />
     <Content Include="Assets\js\jquery.validate.min.js" />
@@ -117,7 +113,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\css\" />
     <Folder Include="Assets\img\" />
   </ItemGroup>
   <ItemGroup>

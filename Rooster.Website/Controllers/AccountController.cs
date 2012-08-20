@@ -32,11 +32,38 @@ namespace Rooster.Website.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel viewModel)
         {
+            if (ModelState.IsValid)
+            {
+                bool validCredentials = _securityService.ValidateMember(viewModel.EmailAddress, viewModel.Password);
+                if (validCredentials)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return View(viewModel); 
+                }
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Register()
+        {
+            return View(new RegisterViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel viewModel)
+        {
             if (!ModelState.IsValid)
             {
-                return View(viewModel);
+                
             }
-            return View();
+
+            return Index();
         }
 
     }

@@ -49,12 +49,22 @@ namespace Rooster.Service
 
         public bool ValidateMember(string emailAddress, string password)
         {
-            throw new NotImplementedException();
+            Member member = GetUserByEmailAddress<Member>(emailAddress);
+
+            return member != null ? true : member.ValidatePassword(password);
         }
 
         public bool ChangeMemberPassword(Member member, string oldPassword, string newPassword)
         {
-            throw new NotImplementedException();
+            if (oldPassword == newPassword)
+            {
+                member.Password = newPassword;
+                _userRepository.Update(member);
+                SaveChanges();
+                return true;
+            }
+            return false;
+
         }
 
         public IEnumerable<T> GetUsers<T>() where T : User

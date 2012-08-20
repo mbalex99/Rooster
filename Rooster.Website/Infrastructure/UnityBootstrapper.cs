@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Rooster.DataAccess;
+using Rooster.DataAccess.Infrastructure;
 using Rooster.DataAccess.Repositories;
 using Rooster.Service;
 
@@ -15,6 +16,12 @@ namespace Rooster.Website.Infrastructure
         public static IUnityContainer GetUnityContainer()
         {
             IUnityContainer container = new UnityContainer();
+
+            //DataAccess Type Registration
+            container
+                .RegisterType<IDatabaseFactory, DatabaseFactory>(new HttpContextLifetimeManager<IDatabaseFactory>())
+                .RegisterType<IUnitOfWork, UnitOfWork>(new HttpContextLifetimeManager<IUnitOfWork>());
+
 
             //Repository Type Registration
             container

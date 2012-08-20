@@ -22,17 +22,17 @@ namespace Rooster.Domain.Entities
         public byte[] Salt { get; private set; }
         public byte[] PasswordHash { get; private set; }
 
-        //[NotMapped]
-        //public string Password
-        //{
-        //    set 
-        //    { 
-        //        this.Salt = Security.SaltedHash.GenerateSalt();
-        //        this.PasswordHash = Security.SaltedHash.GenerateSaltedHash(value, this.Salt);
-        //    }
-        //}
+        [NotMapped]
+        public string Password
+        {
+            set
+            {
+                this.Salt = Security.SaltedHash.GenerateSalt();
+                this.PasswordHash = Security.SaltedHash.GenerateSaltedHash(value, this.Salt);
+            }
+        }
 
-        public bool IsPasswordValid(string plaintextPassword)
+        public bool ValidatePassword(string plaintextPassword)
         {
             if (this.Email == null)
             {

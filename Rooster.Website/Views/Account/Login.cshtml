@@ -1,14 +1,19 @@
-﻿@model Rooster.Website.Models.LoginViewModel
+﻿@model Rooster.Website.Models.AccountViewModels.LoginViewModel
 
 @{
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
-
-@using(Html.BeginForm("Login", "Account", FormMethod.Post))
-{
-    <fieldset>
-        
-    </fieldset>
-}
+<div id="loginForm">
+    <h2>Login</h2>
+    @using(Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <fieldset>
+            @Html.LabelFor(m => m.EmailAddress)
+            @Html.TextBoxFor(m => m.EmailAddress)
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+            <input type="submit" value="Login"/>
+        </fieldset>
+    }
+</div>
