@@ -41,6 +41,13 @@ namespace Rooster.Website
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
+            Database.SetInitializer(new RoosterContextInitializer());
+
+            using (var context = new RoosterContext())
+            {
+                context.Database.Initialize(force:true);
+            }
+
             IUnityContainer container = UnityBootstrapper.GetUnityContainer();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

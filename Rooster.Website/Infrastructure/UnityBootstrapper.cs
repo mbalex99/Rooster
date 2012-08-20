@@ -7,6 +7,7 @@ using Rooster.DataAccess;
 using Rooster.DataAccess.Infrastructure;
 using Rooster.DataAccess.Repositories;
 using Rooster.Service;
+using Rooster.Website.Infrastructure.Membership;
 
 
 namespace Rooster.Website.Infrastructure
@@ -16,6 +17,11 @@ namespace Rooster.Website.Infrastructure
         public static IUnityContainer GetUnityContainer()
         {
             IUnityContainer container = new UnityContainer();
+
+            //Website Services
+            container
+                .RegisterType<IFormsAuthenticationService, FormsAuthenticationService>(
+                    new HttpContextLifetimeManager<IFormsAuthenticationService>());
 
             //DataAccess Type Registration
             container

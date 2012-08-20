@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "TopHeader";
+    Layout = null;
+    bool loggedIn = User.Identity.IsAuthenticated;
+}
+
+<div id="topHeader">
+@if (loggedIn)
+{
+    @Html.ActionLink("Logoff", "Logoff", "Account")
+    <span>Welcome @User.Identity.Name</span>
+}
+else
+{
+    @Html.ActionLink("Login", "Login", "Account")
+    <span>You're not logged in</span>
+}
+</div>

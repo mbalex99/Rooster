@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Rooster.ThirdParty\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\Rooster.ThirdParty\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -74,7 +77,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\CustomControllerActivator.cs" />
-    <Compile Include="Infrastructure\Membership\CustomIdentity.cs" />
+    <Compile Include="Infrastructure\Membership\FormsAuthenticationService.cs" />
     <Compile Include="Infrastructure\UnityBootstrapper.cs" />
     <Compile Include="Infrastructure\UnityControllerFactory.cs" />
     <Compile Include="Infrastructure\UnityDependencyResolver.cs" />
@@ -144,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\local.db.config" />
+    <Content Include="Views\Shared\TopHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\local.app.config" />

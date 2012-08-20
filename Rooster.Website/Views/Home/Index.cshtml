@@ -1,5 +1,20 @@
 ﻿@{
     ViewBag.Title = "Index";
+    bool loginStatus = User.Identity.IsAuthenticated;
 }
 
 <h2>Rooster</h2>
+
+@if (loginStatus)
+{
+    <p>Hi @User.Identity.Name! You are currently logged in!</p>
+}
+else
+{
+    <p>You are not logged in</p>
+}
+
+<p>
+    Rooster is a boiler plate for creating your next tech startup using Entity Framework and ASP.NET MVC. 
+    <a href="https://github.com/mbalex99/Rooster.git">Repository Path on Github</a>
+</p>

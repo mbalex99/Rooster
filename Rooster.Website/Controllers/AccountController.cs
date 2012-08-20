@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Rooster.Service;
+using Rooster.Website.Infrastructure.Membership;
 using Rooster.Website.Models.AccountViewModels;
 
 namespace Rooster.Website.Controllers
@@ -13,10 +14,12 @@ namespace Rooster.Website.Controllers
         //
         // GET: /Account/
         private readonly ISecurityService _securityService;
+        private readonly IFormsAuthenticationService _formsAuthenticationService;
 
-        public AccountController(ISecurityService securityService)
+        public AccountController(ISecurityService securityService, IFormsAuthenticationService formsAuthenticationService)
         {
             _securityService = securityService;
+            _formsAuthenticationService = formsAuthenticationService;
         }
 
         public ActionResult Index()
@@ -26,7 +29,11 @@ namespace Rooster.Website.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
@@ -37,6 +44,7 @@ namespace Rooster.Website.Controllers
                 bool validCredentials = _securityService.ValidateMember(viewModel.EmailAddress, viewModel.Password);
                 if (validCredentials)
                 {
+                    _formsAuthenticationService.SignIn(viewModel.EmailAddress, true);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -48,6 +56,15 @@ namespace Rooster.Website.Controllers
             {
                 return View();
             }
+        }
+        
+        public ActionResult Logoff()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                _formsAuthenticationService.SignOut();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Register()

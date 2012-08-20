@@ -59,6 +59,7 @@
     <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="RoosterContext.cs" />
+    <Compile Include="RoosterContextInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rooster.Domain\Rooster.Domain.csproj">
